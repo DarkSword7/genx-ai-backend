@@ -33,6 +33,10 @@ const imagekit = new ImageKit({
   privateKey: process.env.IMAGE_KIT_PRIVATE_KEY,
 });
 
+app.get("/", (req, res) => {
+  res.send("Hello World!");
+});
+
 app.get("/api/upload", (req, res) => {
   const result = imagekit.getAuthenticationParameters();
   res.send(result);
