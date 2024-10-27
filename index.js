@@ -4,6 +4,7 @@ import ImageKit from "imagekit";
 import mongoose from "mongoose";
 import UserChats from "./models/userChats.js";
 import Chat from "./models/chats.js";
+import dotenv from "dotenv";
 import { ClerkExpressRequireAuth } from "@clerk/clerk-sdk-node";
 
 const app = express();
@@ -13,7 +14,7 @@ app.use(
     credentials: true,
   })
 );
-
+dotenv.config();
 app.use(express.json());
 
 const PORT = process.env.PORT || 3000;
